@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  postgres:
+    build:
+      context: db/postgres
+      dockerfile: Dockerfile
+    container_name: liquibasedemo
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - liquibasedemo_network
+
+networks:
+  liquibasedemo_network: {}
