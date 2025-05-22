@@ -24,6 +24,6 @@ class Student(
     @JsonIgnore
     var email: String,
 
-//    @Column(name = "address")
-//    var address: String,
+    @Column(name = "address")
+    var address: String,
 ) : Serializable

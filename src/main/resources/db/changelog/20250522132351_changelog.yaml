@@ -1,0 +1,40 @@
+databaseChangeLog:
+- changeSet:
+    id: 1747920239823-1
+    author: slade (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+              primaryKeyName: studentsPK
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: email
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: first_name
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: last_name
+            type: VARCHAR(255)
+        tableName: students
+- changeSet:
+    id: 1747920239823-2
+    author: slade (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: id
+        constraintName: UC_STUDENTSID_COL
+        tableName: students
+
